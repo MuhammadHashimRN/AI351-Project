@@ -6,7 +6,7 @@ def sidebar():
     Displays the sidebar for navigation.
     """
     st.sidebar.title("Navigation")
-    return st.sidebar.radio("Go to:", ["Home", "Stock Analysis", "Model Overview", "Settings"])
+    return st.sidebar.radio("Go to:", ["Home", "Stock Analysis", "Model Overview"])
 
 def main():
     """
