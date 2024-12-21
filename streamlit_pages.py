@@ -237,30 +237,78 @@ def display_model_overview():
     Displays the Model Overview page.
     """
     st.title("Model Overview")
-    st.write("### LSTM with Attention")
+    
+    st.write("## What is Time Series Modeling?")
     st.write("""
-    This model uses a Long Short-Term Memory (LSTM) layer with an attention mechanism to 
-    focus on important time steps in the data for better predictions.
-    """)
-    st.write("### GRU")
-    st.write("""
-    The Gated Recurrent Unit (GRU) is a simplified version of LSTM that uses fewer parameters 
-    while still achieving high accuracy for time-series data.
-    """)
-    st.write("### BiLSTM")
-    st.write("""
-    The Bidirectional LSTM processes data in both forward and backward directions, 
-    improving the model's understanding of sequential dependencies.
+    Time series modeling involves analyzing data points collected over time and making predictions 
+    based on historical patterns. These models are widely used in stock market forecasting, 
+    weather prediction, and various domains where trends and seasonality play a critical role.
     """)
 
-def display_settings():
-    """
-    Displays the Settings page.
-    """
-    st.title("Settings")
-    theme = st.selectbox("Select Theme", ["Light", "Dark"])
-    st.write(f"Theme selected: {theme}")
-    extended_training = st.checkbox("Enable Extended Training (More Epochs)")
-    if st.button("Save Settings"):
-        st.session_state['extended_training'] = extended_training
-        st.success("Settings saved.")
+    st.write("## Why Use Advanced Models for Time Series?")
+    st.write("""
+    Traditional models like ARIMA and Exponential Smoothing are effective but often fail to 
+    capture complex patterns and dependencies in data. Deep learning models, such as LSTM, GRU, 
+    and BiLSTM, excel at identifying non-linear relationships and temporal dependencies, making them 
+    ideal for modern time-series forecasting applications.
+    """)
+
+    st.write("### LSTM with Attention")
+    st.write("""
+    Long Short-Term Memory (LSTM) networks are a type of recurrent neural network (RNN) specifically 
+    designed to learn long-term dependencies in sequential data. LSTM networks include memory cells 
+    and gates (input, forget, and output) that enable them to remember or forget specific information. 
+
+    The **attention mechanism** enhances this capability by assigning importance to specific time steps, 
+    allowing the model to focus on key points in the sequence. This is particularly useful in stock price 
+    prediction, where certain events or time frames might have a greater influence on future prices.
+    """)
+
+    st.write("### GRU")
+    st.write("""
+    The Gated Recurrent Unit (GRU) is a simplified version of LSTM that combines the forget and input 
+    gates into a single "update gate." This reduces the number of parameters, making GRU computationally 
+    efficient while still capturing temporal dependencies. GRUs are particularly useful for applications 
+    where computational resources are limited, or the dataset is smaller.
+
+    Despite being simpler than LSTMs, GRUs often achieve similar levels of accuracy, making them a 
+    popular choice in real-world applications.
+    """)
+
+    st.write("### BiLSTM")
+    st.write("""
+    Bidirectional LSTMs (BiLSTM) extend the capabilities of standard LSTMs by processing sequences 
+    in both forward and backward directions. This allows the model to capture dependencies from both 
+    past and future time steps, improving its understanding of sequential relationships.
+
+    BiLSTM models are widely used in tasks like sentiment analysis, language modeling, and time-series 
+    forecasting, where understanding the context from both directions can enhance predictions.
+    """)
+
+    st.write("## Why Choose These Models?")
+    st.write("""
+    - **LSTM with Attention**: Ideal for datasets where certain time points hold more significance 
+      than others. The attention mechanism ensures the model focuses on these critical moments.
+    - **GRU**: Offers a balance between performance and computational efficiency, making it suitable 
+      for smaller datasets or scenarios with limited resources.
+    - **BiLSTM**: Excels in capturing relationships from both directions in a sequence, making it 
+      highly effective for tasks that require a deeper contextual understanding.
+    """)
+
+    st.write("## Real-World Applications")
+    st.write("""
+    - **Stock Market Prediction**: These models can forecast future prices based on historical trends, 
+      news, and market conditions.
+    - **Weather Forecasting**: Predicting temperatures, precipitation, and other weather-related metrics 
+      using sequential patterns in data.
+    - **Healthcare**: Analyzing patient health records to predict disease progression or treatment outcomes.
+    - **Energy Demand Forecasting**: Predicting electricity or fuel demand based on past usage patterns.
+    """)
+
+    st.write("## About the Author")
+    st.write("""
+    My name is **Muhammad Hashim Rabnawaz**. I am currently pursuing a bachelor's degree in Artificial Intelligence 
+    at the **Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI)** in Topi, Swabi. 
+    My registration number is **2022383**, and I am passionate about leveraging AI technologies to solve 
+    real-world challenges.
+    """)
