@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_pages import display_home, display_stock_analysis, display_model_overview, display_settings
+from streamlit_pages import display_home, display_stock_analysis, display_model_overview
 
 def sidebar():
     """
@@ -19,8 +19,6 @@ def main():
         display_stock_analysis()
     elif page == "Model Overview":
         display_model_overview()
-    elif page == "Settings":
-        display_settings()
-
+        
 if __name__ == "__main__":
     main()
