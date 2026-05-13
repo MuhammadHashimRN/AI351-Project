@@ -1,4 +1,7 @@
+import os
+
 import streamlit as st
+from dotenv import load_dotenv
 from utils import download_data, preprocess_data, create_sequences, save_predictions_to_csv
 from utils import collect_user_feedback, validate_inputs, fetch_symbols_from_alpha_vantage
 from models import build_lstm_attention, build_gru_model, build_bilstm_model, kfold_model_evaluation
@@ -9,7 +12,8 @@ import matplotlib.pyplot as plt
 import shap
 from plotly import graph_objects as go
 
-API_KEY = "REDACTED_ALPHA_VANTAGE_KEY"
+load_dotenv()
+API_KEY = os.getenv("ALPHA_VANTAGE_API_KEY", "")
 
 # Configuration for model parameters
 CONFIG = {
